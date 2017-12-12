@@ -1,0 +1,18 @@
+/*
+-break points mobile 767px, tablet 767-1024px
+-tablet hover effect on nav causes bar to appear from left to right
+  -mobile nav bar takes up screen
+  achecker.ca for test after completion
+  nav stays at top
+*/
+
+nav{
+  position: sticky;
+  color: white;
+}
+nav a:hover{
+  color: yellow;
+}
+.main{
+  max-width: 1440px;
+}
