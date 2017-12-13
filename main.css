@@ -48,14 +48,18 @@ h1{
 h3{
   font-size: 1.3em;
 }
+span{
+  display: block;
+}
 .links{
   width: 30%;
   display: flex;
   justify-content: space-around;
 }
 .main{
-  display: flex;
-  justify-content: center;
+  height: 1864px;
+  /*display: flex;
+  flex-direction: column;*/
 }
 .header{
   max-width: 1440px;
@@ -67,6 +71,7 @@ h3{
   background-position: 50% 50%;
   color: white;
   text-align: center;
+  margin: auto;
 }
 .header h6{
   color: red;
@@ -80,4 +85,44 @@ h3{
   flex-direction: column;
   justify-content: center;
 text-shadow: 1px 1px 2px black;
+}
+.gridOuter{
+  margin-top: 2em;
+}
+.grid{
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  height: 1024px;
+  flex-wrap: wrap;
+  margin: auto;
+
+}
+.gridElement{
+  width: 30%;
+  overflow: hidden;
+  max-height: 200px;
+}
+.gridElement img{
+  width: 100%;
+}
+img:hover{
+  width: 100%;
+  transform: scale(1.1,1.1);
+  transform: translateY(0.1);
+}
+.imageDesc{
+  color: white;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  bottom: 4.4em;
+  padding: 1em;
+  background-image: linear-gradient(to bottom, transparent, #333);
+  font-size: 18px;
+  overflow: hidden;
+}
+.imageDesc a{
+  color: white;
 }
