@@ -5,6 +5,9 @@
   achecker.ca for test after completion
   nav stays at top
 */
+*, ::before, ::after{
+  font-family: arial;
+}
 body{
   margin: 0;
   padding: 0;
@@ -107,7 +110,7 @@ text-shadow: 1px 1px 2px black;
 .gridElement img{
   width: 100%;
 }
-img:hover{
+.image img:hover{
   width: 100%;
   transform: scale(1.1,1.1);
   transform: translateY(0.1);
@@ -125,4 +128,8 @@ img:hover{
 }
 .imageDesc a{
   color: white;
+  line-height: 1.65em;
+}
+.imageDesc span{
+  font-size: 14px;
 }
