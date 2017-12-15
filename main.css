@@ -15,6 +15,7 @@ body{
 }
 nav{
   position: fixed;
+  z-index: 2;
   color: white;
   background-color: #2DC48D;
   display: flex;
@@ -26,7 +27,7 @@ nav a{
   color: white;
   text-decoration: none;
 }
-nav a:hover{
+a:hover{
   color: yellow;
 }
 nav div{
@@ -60,7 +61,7 @@ footer p{
 h1{
   font-size: 3.5em;
 }
-h3{
+h2{
   font-size: 1.3em;
 }
 span{
@@ -78,7 +79,7 @@ span{
   text-align: center;
   margin: auto;
 }
-.header h6{
+.header h3{
   color: red;
   height: 5%;
   padding: 0;
@@ -89,12 +90,11 @@ span{
   display: flex;
   flex-direction: column;
   justify-content: center;
-text-shadow: 1px 1px 2px black;
+  text-shadow: 2px 2px 3px black;
 }
 .grid{
   margin: auto;
 }
-
 .imageDesc{
   color: white;
   text-decoration: none;
@@ -104,11 +104,15 @@ text-shadow: 1px 1px 2px black;
   padding: 1em;
   background-image: linear-gradient(to bottom, transparent, #333);
   font-size: 18px;
+  max-height: 80px;
   overflow: hidden;
 }
 .imageDesc a{
   color: white;
   line-height: 1.65em;
+}
+.imageDesc a:hover{
+  color: yellow;
 }
 .imageDesc span{
   font-size: 14px;
@@ -121,8 +125,6 @@ text-shadow: 1px 1px 2px black;
 .gridElement{
   display: inline-block;
   width: 30%;
-  overflow: hidden;
-  max-height: 240px;
   margin: 2.5% 0 0 2.5%;
 }
 .image{
@@ -140,14 +142,13 @@ text-shadow: 1px 1px 2px black;
   transform: scale(1.1,1.1);
   transform: translateY(0.1);
 }
+.overlay{
+  display: none;
+}
 @media (max-width:1024px) {
-  nav {
-    z-index:2;
-  }
   nav .links {
     display: block;
     position:fixed;
-    right:initial;
     width:50%;
     height: 100vh;
     max-height: 100vh;
@@ -155,7 +156,6 @@ text-shadow: 1px 1px 2px black;
     left:-50%;
     bottom:0;
     background-color: #2DC48D;
-    z-index:2;
   }
   .links a{
     display: block;
@@ -163,10 +163,47 @@ text-shadow: 1px 1px 2px black;
   }
   nav .youtubeLogo:hover + .links, nav .links:hover {
     left:0%;
+    transition: left 0.5s ease;
   }
+  .overlay{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    bottom: -100vh;
+    height: 100vh;
+    max-height: 100vh;
+    width: 50vw;
+    left: -50vw;
+    background-color: black;
+    opacity: 0.75;
+  }
+  nav .youtubeLogo:hover + .links + .overlay, nav .links:hover + .overlay{
+    left: 50vw;
+    transition: left 0.5s ease;
+  }
+
+
   .gridElement{
     width: 45%;
     margin: 3.3% 0 0 3.3%;
+  }
+  .imageDesc{
+    color: white;
+    text-decoration: none;
+    position: relative;
+    bottom: 0em;
+    padding: 1em;
+    background: none;
+    background-color: #777;
+    font-size: 18px;
+    overflow: hidden;
+  }
+  .imageDesc a{
+    color: white;
+    line-height: 1.65em;
+  }
+  .imageDesc span{
+    font-size: 14px;
   }
 }
 
@@ -180,5 +217,8 @@ text-shadow: 1px 1px 2px black;
   }
   .gridElement{
     width: 100%;
+  }
+  .overlay{
+    display: none;
   }
 }
